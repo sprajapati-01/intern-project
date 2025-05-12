@@ -26,7 +26,7 @@ y = to_categorical(y, num_classes=7)
 # Train/Test split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
-# Build CNN model
+
 model = Sequential([
     Conv2D(32, (3,3), activation='relu', input_shape=(48,48,1)),
     MaxPooling2D(2,2),
@@ -35,7 +35,7 @@ model = Sequential([
     Flatten(),
     Dense(128, activation='relu'),
     Dropout(0.5),
-    Dense(7, activation='softmax')  # 7 emotions
+    Dense(7, activation='softmax')  
 ])
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
